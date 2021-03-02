@@ -1,0 +1,221 @@
+* {
+ font-family: sans-serif;
+ font-style: normal;
+ line-height: 1.5;
+ margin: 0;
+ padding: 0;
+ text-decoration: none;
+}
+
+html {
+    background-attachment: fixed;
+    background-color: #99ccff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+ html {
+  background-image: url(panorama-w800.jpg);
+ }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+ html {
+  background-image: url(panorama-w1200.jpg);
+ }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+ html {
+  background-image: url(panorama-w1600.jpg);
+ }
+}
+
+@media screen and (min-width: 1600px) {
+ html {
+  background-image: url(panorama-w2000.jpg)
+ }
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 3em;
+    position: relative;
+    width: 33em;
+}
+
+body * { max-width: 100%; }
+
+img { white-space: pre-wrap; }
+h1 { font-size: 1.5em; }
+
+body > h1 {
+    display: block;
+    height: 11em;
+}
+
+body > nav,
+body > section {
+    width: 100%;
+}
+
+body > nav > a {
+    box-sizing: border-box;
+}
+
+body > section,
+body > section > ul,
+body > section > table {
+    margin: 1.5em 0;
+}
+
+body > nav li,
+body > section {
+ border-radius: 0.375em;
+}
+
+body > nav li {
+ background-color: #646464;
+ border: 2px solid white;
+ color: white;
+ display: inline-block;
+ margin-right: 0.75em;
+ padding: 0.75em 1.5em;
+ text-align: center;
+ font-weight: bold;
+}
+
+body > nav li > a {
+ background-color: inherit;
+ border-bottom-style: solid;
+ border-bottom-width: 1px;
+ color: inherit;
+}
+
+body > nav li#link-download {
+ background-color: #ff6440;
+ border-color: black;
+ color: #010101;
+ font-weight: bold;
+}
+
+body > section {
+ background-color: white;
+ border: 2px solid black;
+ color: black;
+ display: block;
+ margin-bottom: 1.5em;
+ padding: 0 1.5em;
+ width: 30em;
+}
+
+footer {
+	text-align: center;
+	visibility: hidden;
+}
+
+i, cite { font-style: italic; }
+dfn { font-style: normal; font-weight: bold; }
+body > section > h1 { display: none; }
+body > section > p,
+body > section > ul > li,
+body > section > dl { display: block; margin: 1.5em 0; }
+body > section > ul { list-style-type: none; }
+#download ul > table > tbody > tr > td a { margin-right: 10px }
+#download ul > table > tbody > tr > td > a img { width:64px; right: auto; position: absolute; z-index: 2;}
+#download > ul > table > tbody > tr > td img { width:64px; right: 10px; position: relative; z-index: 1;}
+#download > ul > table > tbody > tr > td > li a { border-bottom:1px solid #dd2244; color:#dd2244; font-weight:bold; }
+dt { display: inline; font-weight: bold; }
+dd { display: inline; }
+dd + dt::before { content: '\A\A'; white-space: pre; }
+
+#screenshots {
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+#screenshots:target {
+    opacity: 1;
+}
+
+#screenshots li,
+#screenshots a,
+#screenshots img{
+ display: block;
+}
+
+#screenshots li a{
+ border: 2px solid #dd2244;
+}
+
+#hmuro_1,
+#hmuro_2,
+#hmuro_3 {
+ opacity: 0;
+ margin-left: 34.5em;
+ transform: translate(60em);
+ width: 400px ;
+}
+
+#ulyana_1,
+#ulyana_2,
+#ulyana_3 {
+ opacity: 0;
+ margin-left: -360px;
+ transform: translate(-60em);
+ width: 360px ;
+}
+
+#screenshots:hover ~ #hmuro_1,
+#screenshots:target ~ #hmuro_1,
+#download:hover ~ #hmuro_2,
+#download:target ~ #hmuro_2,
+#online:hover ~ #hmuro_3,
+#online:target ~ #hmuro_3 {
+ opacity: 1;
+ transform: translate(0);
+}
+
+#screenshots:hover ~ #hmuro_2,
+#online:hover ~ #hmuro_2,
+#download:hover ~ #hmuro_1,
+#online:hover ~ #hmuro_1,
+#screenshots:hover ~ #hmuro_3,
+#download:hover ~ #hmuro_3 {
+ opacity: 0;
+ transform: translate(60em);
+}
+
+#screenshots:hover ~ #ulyana_1,
+#screenshots:target ~ #ulyana_1,
+#download:hover ~ #ulyana_2,
+#download:target ~ #ulyana_2,
+#online:hover ~ #ulyana_3,
+#online:target ~ #ulyana_3 {
+ opacity: 1;
+ transform: translate(0);
+}
+
+#screenshots:hover ~ #ulyana_2,
+#online:hover ~ #ulyana_2,
+#download:hover ~ #ulyana_1,
+#online:hover ~ #ulyana_1,
+#screenshots:hover ~ #ulyana_3,
+#download:hover ~ #ulyana_3 {
+ opacity: 0;
+ transform: translate(-60em);
+}
+
+#hmuro_1, #ulyana_1, #hmuro_2, #ulyana_2, #ulyana_3, #hmuro_3 {
+ transition-duration: 0.5s;
+ transition-property: bottom, clip, opacity, transform;
+ bottom: 0;
+ position: fixed;
+}
+
+#download ul { margin-bottom: 1.5em; }
